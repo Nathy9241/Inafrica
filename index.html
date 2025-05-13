@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>In Africa Together - Result Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff10;
+      backdrop-filter: blur(10px);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-weight: 300;
+      color: #ddd;
+    }
+
+    .score {
+      font-size: 18px;
+      margin: 15px 0;
+      padding: 12px;
+      background-color: #ffffff15;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .total {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #ffcc00;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+<img src="in.jpg" style="height:150; width: 250;">
+  <div class="container">
+      
+    <h1>In Africa Together</h1>
+    <h3>Test Result Report</h3>
+    <h2>Tsion Girmaye</h2>
+
+    <div class="score" id="english">English: <span>--</span>/100</div>
+    <div class="score" id="math">Math: <span>--</span>/100</div>
+    <div class="score" id="aptitude">Aptitude: <span>--</span>/100</div>
+
+    <div class="total" id="total">Total: -- | Percentage: --%</div>
+  </div>
+
+  <script>
+    // Sample result data (you can fetch from API or form input)
+    const scores = {
+      english: 95,
+      math: 92,
+      aptitude: 97
+    };
+
+    // Insert scores into the page
+    document.getElementById("english").querySelector("span").innerText = scores.english;
+    document.getElementById("math").querySelector("span").innerText = scores.math;
+    document.getElementById("aptitude").querySelector("span").innerText = scores.aptitude;
+
+    const total = scores.english + scores.math + scores.aptitude;
+    const percentage = ((total / 300) * 100).toFixed(2);
+
+    document.getElementById("total").innerText = `Total: ${total} | Percentage: ${percentage}%`;
+  </script>
+</body>
+</html>
